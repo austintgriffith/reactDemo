@@ -1,0 +1,13 @@
+{
+  "name": "todo",
+  "main": "app.js",
+  "dependencies": {
+    "express": "*",
+    "react": "*"
+  },
+  "devDependencies": {
+    "node-jsx": "*",
+    "react-tools": "*",
+    "reactify": "*"
+  }
+}

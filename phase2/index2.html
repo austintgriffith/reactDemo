@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello React</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://fb.me/react-0.13.1.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+  </head>
+  <body>
+    <div id="content">loading...</div>
+    <script type="text/jsx">
+      var HelloWorld = React.createClass({
+	  	getInitialState: function(){
+	  		return {title:"Hello World!"};
+	  	},
+	  	handleClick:function(){
+	  		this.setState({title:event.target.innerHTML})
+	  	},
+		render: function() {
+			var someStyle = {paddingLeft:200};
+			return (
+			  <div className="jumbotron" style={someStyle}>
+			    <h1 >{this.state.title}</h1>
+					<p>This is the start of some React stuff.</p>
+					<p>
+						<a className="btn btn-primary btn-lg" href="#" role="button" onClick={this.handleClick}>Rad</a> 
+						<a style={{marginLeft:50}} className="btn btn-default btn-lg" href="#" role="button" onClick={this.handleClick}>Lame</a>
+					</p>
+			  </div>
+			);
+		}
+	});
+	React.render(
+	  <HelloWorld />,
+	  document.getElementById('content')
+	);
+    </script>
+  </body>
+</html>
