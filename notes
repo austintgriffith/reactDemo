@@ -1,0 +1,71 @@
+::Intro
+	Thinking in react: https://facebook.github.io/react/blog/2013/11/05/thinking-in-react.html
+	Shadow DOM: speed!!
+	Blog: http://facebook.github.io/react/blog/
+
+::Phase 1 -- setting up the environment
+	node
+	package.json
+	express
+	npm install
+	hello world demo
+
+
+::Phase 2 -- intro to react
+	react in package.json (and then npm install)
+	app.js hosts index.html instead of sending text
+	index.html
+		- brings in libs
+		- creates React class with render function
+		- calls render into the content div
+		- Demo!
+			*view page source 
+	index2.html
+		- edit app.js to go to index2
+		- className vs class, camel case instead of -
+		- look at the inline style created from the object
+		- on click action gets innerhtml and sets the props
+		- Demo!
+		- Edit to pass initial title as a tag?
+
+	Show this demo? https://facebook.github.io/react/tips/communicate-between-components.html
+
+	More demos of simple react concepts?
+
+::Phase 3 -- isomorhpic java script
+	todos.jsx first just to see the goal of the react code
+		- componentDidMount: ajax to jira endpoint
+		- render maps todos to a simple Todo class and counts them
+	package.json: contains build script, browserify
+	app.js
+		- Factory and intial props going in from cached jira data
+		- replacing ##REACTCONTENT## in index.html (there are better ways, this is raw dog)
+		- bundle.js endpoint for broswerify compiled content (react, jquery, your code)
+		- jira endpoint 
+		- index.js does the same factory, but that is on the client side
+			* and is compiled together using "npm run build"
+		- point out how index.html pulls in bundle.js
+		- Demo! npm run build;node app.js
+			* view page source explain how ajax takes over after content is delivered but good for SEO
+			* make some small changes to show the dev flow with rebuilding
+
+
+::Phase 4 -- better build cycle
+	package.json additions: gulp, watchify, reactify, nodemon, etc (........ https://github.com/remy/nodemon https://twitter.com/_iest/status/428975653061660672)
+	all files are the same except todos.jsx is a little more mature
+	gulpfile.js
+		- bundles up index.jsx and reactify just like last example, but automatically
+	run.sh
+		- starts gulp watch and nodemon watch
+	Demo!
+		* go over todos.jsx and show how edits trigger a full rebuild automatically
+
+:: Phase 5 -- build better product with easy to understand file structure 
+	(They say React really shines as the product grows to be large and you can still edit and view things in a way that makes sense)
+	(Note that it is isomorphic and you can view source as you build it out too)
+
+::Other shiz
+	(note: Todo System will run in production as pm2 instead of nodemon and watchify)
+
+	Mixins
+	React Native

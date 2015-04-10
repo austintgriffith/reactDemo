@@ -30,7 +30,6 @@ app.get('/bundle.js', function(req, res){
   	res.sendFile(__dirname +'/bundle.js');
 });
 
-
 //get jira data back
 app.get('/jira', function(req, res){
 	console.log("Getting Jira data ondemand...");

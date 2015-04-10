@@ -5,9 +5,9 @@ var $ = require('jquery');
 var Todo = React.createClass({
 	render: function() {
 		return (
-			<div>
-				A TODO HERE
-			</div>
+			<ul>
+				<li>{this.props.summary}</li>
+			</ul>
 		);
 	}
 });
@@ -38,9 +38,7 @@ module.exports =  React.createClass({
 			todos = this.state.jira.map(function (todo) {
 				console.log(todo);
 				return (
-					<Todo>
-						a todo
-					</Todo>
+					<Todo summary={todo.summary}/>
 				);
 		    });
 		}

@@ -2,7 +2,7 @@
 var React = require('react');
 var $ = require('jquery');
 
-var Todo = React.createClass({
+module.exports =  React.createClass({
 	/*
 		this.props.data looks like this:
 		{ key: 'UXI-210',
@@ -36,51 +36,6 @@ var Todo = React.createClass({
 			    	<small>{this.props.data.desc}</small> 
 			    </p>
 			</a>
-		);
-	}
-}); 
-
-module.exports =  React.createClass({
-	getInitialState: function() {
-		//Loading Props as intial state because of isomorphic nonsense.
-	    return this.props;
-	},
-	componentDidMount: function() {
-		console.log("componentDidMount...");
-		this.updateJira();
-	},
-	updateJira: function(){
-		console.log("Loading data...");
-	    $.get("/jira", function(result) {
-			this.setState({
-				jira:JSON.parse(result)
-			});
-	    }.bind(this));
-	    setTimeout(this.updateJira,3000);
-	},
-	render: function() {
-		var count = 0;
-		var todos;
-		if(typeof this.state.jira != "undefined"){
-			count = this.state.jira.length;
-			todos = this.state.jira.map(function (todo) {
-				return (
-					<Todo data={todo} key={todo.key}/>
-				);
-		    });
-		}
-		return (
-
-			<div className="container" style={{paddingTop:18}}>
-				<a target="_Blank" href="https://madsoftware.atlassian.net/secure/CreateIssue!default.jspa">
-					<div className="btn btn-default">
-						<span className="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
-					</div>
-				</a>
-				<div className="list-group" style={{paddingTop:10}}>
-				{todos}
-				</div>
-		    </div>
 		);
 	}
 });
