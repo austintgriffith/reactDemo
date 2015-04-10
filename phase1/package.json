@@ -1,0 +1,7 @@
+{
+  "name": "todoPhase1",
+  "main": "app.js",
+  "dependencies": {
+    "express": "*"
+  }
+}
