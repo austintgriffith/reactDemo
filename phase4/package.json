@@ -1,0 +1,19 @@
+{
+  "name": "todo",
+  "main": "app.js",
+  "dependencies": {
+    "express": "*",
+    "react": "*",
+    "gulp": "*",
+    "nodemon": "*"
+  },
+  "devDependencies": {
+    "browserify": "*",
+    "node-jsx": "*",
+    "react-tools": "*",
+    "reactify": "*",
+    "jquery": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*"
+  }
+}
